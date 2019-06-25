@@ -6,7 +6,8 @@ import ScrollToTop from './components/ScrollToTop.js'
 
 // Pages
 import Home from './pages/Home'
-import About from './pages/About'
+import Works from './pages/Works'
+import Projects from './pages/Projects'
 import Error from './pages/Error'
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
       <ScrollToTop> 
         <Switch>
           <Route path="/" exact strict component={Home} />
-          <Route path="/hakkimizda" exact strict component={About} />
+          <Route path="/works" exact strict component={Works} />
+          <Route path="/projects" exact strict component={Projects} />
 
           <Route component={Error} />
         </Switch>

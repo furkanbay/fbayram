@@ -27,6 +27,7 @@ export default class Nav extends Component {
     return (
       <React.Fragment>
         <div className="header__right">
+          <Link to="/">Furkan Bayram!</Link>
           <div className="header__right__menu" onClick={e => this.handleToggle(e)}>
             <Hamburger/>
           </div>
@@ -68,7 +69,7 @@ export default class Nav extends Component {
               <Link to="/works">Works</Link>
             </li>
             <li>
-              <a href="mailto:furkanbayram26@gmail.com">Contact</a>
+              <a href="mailto:furkanbayram26@gmail.com?subject=Contact from web site.">Contact</a>
             </li>
           </ul>
         </div>

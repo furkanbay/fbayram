@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 
-import Nav from '../components/Nav'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export default class Projects extends Component {
   constructor(props) {
@@ -10,22 +10,23 @@ export default class Projects extends Component {
       projects: [
         {
           title: 'Stria',
-          description: 'Lorem ipsum',
+          description: 'Feedback Collect Tool SaaS. Collect feedback from your users and have the artificial intelligence tell you how positive the feedback is and whether the feedback indicates happiness or sadness',
           src: require('../images/stria.png'),
-          tags: ['VueJS', 'Sketch'],
+          tags: ['VueJS', 'Sketch', 'RESTful API', 'JS Charts', 'UI Design'],
           behance: 'https://www.behance.net/gallery/80058203/Striaco-UI-Design', 
           visit: 'https://stria.co'
         },
         {
           title: 'Notlarim',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in faucibus elit. Duis pharetra sed tellus non finibus. Vestibulum aliquam urna nec pharetra interdum. Fusce suscipit dolor ac felis facilisis pulvinar. Vivamus ut luctus mauris, nec pharetra ante. Pellentesque ut ante neque. Suspendisse ac neque id dui ullamcorper luctus. Suspendisse dapibus venenatis urna, eu posuere nibh dictum et. Cras tempor mollis quam ut mollis.',
+          description: 'A marketplace application where lecture notes can be sold and purchased.',
           src: require('../images/notlarim.png'),
+          tags: ['Google Analytics', 'Product Management']
         },
         {
           title: 'BenimKupam',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in faucibus elit. Duis pharetra sed tellus non finibus. Vestibulum aliquam urna nec pharetra interdum. Fusce suscipit dolor ac felis facilisis pulvinar. Vivamus ut luctus mauris, nec pharetra ante. Pellentesque ut ante neque. Suspendisse ac neque id dui ullamcorper luctus. Suspendisse dapibus venenatis urna, eu posuere nibh dictum et. Cras tempor mollis quam ut mollis.',
+          description: 'E-Commerce web site focused on personalized products (Mug, Phone Case etc.)',
           src: require('../images/benimkupam.png'),
-          tags: ['Wordpress', 'E-Commerce']
+          tags: ['Wordpress', 'WooCommerce', 'E-Commerce']
         },
       ]
     }
@@ -33,19 +34,7 @@ export default class Projects extends Component {
   render() {
     return (
       <React.Fragment>
-        <header className="header">
-          <div className="header__left">
-            <Link to="/">
-              <div className="hey">
-                Hey :)
-              </div>
-              <div className="name">
-                I'm Furkan.
-              </div>
-            </Link>
-          </div>
-          <Nav/>
-        </header>
+        <Header/>
         <div className="content">
           <div className="container">
             {this.state.projects.map(project => (
@@ -79,6 +68,7 @@ export default class Projects extends Component {
             ))}
           </div>
         </div>
+        <Footer/>
       </React.Fragment>
     )
   }

@@ -31,7 +31,6 @@
 .home
   min-height: 100vh
   display: grid
-  grid-gap: 20px
   grid-template-columns: 1fr
   padding: 0 20px
   @include mq('desktop')
@@ -72,20 +71,35 @@
   display: grid
   grid-template-columns: 1fr
   @include mq('desktop')
-    grid-gap: 20px
     grid-template-columns: 1fr .9fr
   @include mq('large')
     grid-template-columns: 1fr 1.6fr
     height: 200px
   &__left
-    display: flex
     flex-wrap: wrap
     align-items: center
     justify-content: center
     background-color: $white
+    display: none
+    @include mq('desktop')
+      display: flex
+    a
+      padding: 20px
   &__right
     background-color: $black
     display: grid
+    grid-template-columns: auto auto
+    align-items: center
+    @include mq('desktop')
+      grid-template-columns: auto
+    a
+      font-family: 'Pacifico', cursive
+      font-size: 1.5em
+      color: $white
+      padding: 0 10px
+      display: inline-block
+      @include mq('desktop')
+        display: none
     &__menu
       justify-self: end
       align-self: center
@@ -151,16 +165,30 @@
         display: inline-block
       @include mq('large')
         display: block
+.footer
+  background-color: $black
+  color: $white
 
 .content
+  min-height: 70vh
   margin-top: 200px
 
 .project-box
   display: grid
-  grid-template-columns: 1fr 4fr
   align-items: center
   grid-gap: 50px
-  margin-top: 150px
+  margin-top: 50px
+  margin-bottom: 50px
+  grid-template-columns: 1fr
+  justify-items: center
+  text-align: center
+  @include mq('desktop')
+    margin-top: 75px
+    margin-bottom: 75px
+    justify-items: inherit
+    text-align: left
+    grid-template-columns: 1fr 4fr
+
   .title
     font-family: 'Righteous', cursive
     text-transform: capitalize
@@ -175,3 +203,11 @@
       margin-left: 10px
       &:hover
         text-decoration: underline
+.works
+  font-family: 'Pacifico', cursive
+  font-size: 4em
+  color: $orange
+  display: inline-block
+  margin-top: 50px
+  &:hover
+    text-decoration: underline

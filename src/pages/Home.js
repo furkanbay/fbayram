@@ -18,7 +18,7 @@ export default class Home extends Component {
         </header>
         <div className="home">
           <div className="home__left">
-            <div className="content">
+            <div>
               <div className="hey">
                 Hey :)
               </div>

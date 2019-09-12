@@ -18,7 +18,6 @@ function App() {
           <Route path="/" exact strict component={Home} />
           <Route path="/works" exact strict component={Works} />
           <Route path="/projects" exact strict component={Projects} />
-
           <Route component={Error} />
         </Switch>
       </ScrollToTop>

@@ -60,6 +60,9 @@ export default class Nav extends Component {
             <li>
               <a href="https://blog.fbayram.com">Blog</a>
             </li>
+            <li>
+              <a href="https://fbayram.com/Furkan_Bayram_Resume_13-09-2019.pdf">Resume</a>
+            </li>
           </ul>
           <ul className="header__nav">
             <li>

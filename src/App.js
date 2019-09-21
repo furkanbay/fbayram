@@ -2,8 +2,9 @@ import React from 'react';
 import './style/app.sass';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import ScrollToTop from './components/ScrollToTop.js'
 
+import ScrollToTop from './components/ScrollToTop.js'
+// 
 // Pages
 import Home from './pages/Home'
 import Works from './pages/Works'

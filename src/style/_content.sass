@@ -29,11 +29,12 @@
       top: 0
       height: 100%
 .home
-  min-height: 100vh
+  min-height: 90vh
   display: grid
   grid-template-columns: 1fr
   padding: 0 20px
   @include mq('desktop')
+    min-height: 100vh
     padding: 0
     grid-template-columns: 1fr .9fr
   @include mq('large')

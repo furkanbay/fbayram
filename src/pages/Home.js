@@ -29,6 +29,7 @@ export default class Home extends Component {
               <div className="tag">
                 <p>Frontend Dev. <span></span></p>
                 <p>UI Design<span></span></p>
+                <p>Entrepreneur<span></span></p>
               </div>
               <div className="location">
                 <Location/>

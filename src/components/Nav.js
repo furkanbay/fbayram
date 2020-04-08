@@ -11,7 +11,6 @@ export default class Nav extends Component {
       isExpanded: false
     };
   }
-
   handleToggle(e) {
     e.preventDefault();
     this.setState({

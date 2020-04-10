@@ -48,7 +48,7 @@ export default class Nav extends Component {
               <a href="https://twitter.com/furkanbayram0">Twitter</a>
             </li>
             <li>
-              <a href="https://www.instagram.com/fbayramcom/">Instagram</a>
+              <a href="https://www.instagram.com/fbayram00/">Instagram</a>
             </li>
             <li>
               <a href="https://www.behance.net/furkanbay">Behance</a>

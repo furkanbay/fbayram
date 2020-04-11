@@ -19,7 +19,7 @@ export default class Nav extends Component {
   }
   alert(e) {
     e.preventDefault();
-    alert('not yet!')
+    alert('not yet!!!')
   }
   render() {
     const { isExpanded } = this.state;

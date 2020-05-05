@@ -10,7 +10,9 @@ export default class Works extends Component {
         <Header/>
         <div className="content">
           <div className="container">
-            <a className="works" href="https://www.behance.net/furkanbay">Review on Behance</a>
+            <a className="works" href="https://www.behance.net/furkanbay">
+              Review on Behance
+            </a>
           </div>
         </div>
         <Footer/>

@@ -1,21 +1,33 @@
 import type { NextPage } from "next";
-import Seo from "../components/Seo";
-import Logo from "../components/SVG/Logo";
+import Image from "@components/Image";
+
+import Layout from "@components/Layout";
 
 const Home: NextPage = () => {
   return (
-    <>
-      <Seo />
-      <div
-        className="min-h-screen w-full bg-cover bg-center flex items-center justify-center p-4"
-        style={{ backgroundImage: "url('/assets/bg.svg')" }}
-      >
-        <div className="mt-32 text-lg md:text-xl lg:text-3xl font-serif text-primary uppercase flex flex-col items-center gap-10 tracking-[.5em] md:tracking-[1em] lg:tracking-[1.5em]">
-          <Logo />
-          FurkanBayram
+    <Layout title="Home">
+      <div className="grid grid-cols-2 items-center gap-12 py-12">
+        <div className="">
+          <h1 className="text-2xl">Hey 👋</h1>
+          <p className="text-gray-500 mt-4 indent-8">
+            I&apos;m a designer and developer from Turkey. I love being in the
+            outdoors; hiking and travelling are some of the things I do to clear
+            my mind and relax.
+          </p>
+          <p className="text-gray-500 mt-4 indent-8">
+            Being able to both design and develop is a lot of fun. When you have
+            an idea, there&apos;s nothing holding you back from building it.
+          </p>
         </div>
+        <Image
+          width={289}
+          height={292}
+          src="/assets/furkan-bayram.png"
+          alt="furkan bayram"
+          layout="responsive"
+        />
       </div>
-    </>
+    </Layout>
   );
 };
 

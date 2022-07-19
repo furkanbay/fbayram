@@ -7,7 +7,7 @@ type Props = {
   description?: string;
 };
 
-const Seo: NextPage = ({ title, description }: Props) => {
+const Seo = ({ title, description }: Props) => {
   const site = "https://fbayram.com";
   const router = useRouter();
   let canonicalURL = "";
@@ -22,7 +22,7 @@ const Seo: NextPage = ({ title, description }: Props) => {
   description = description || "I'm a designer and developer from Turkey. ";
   return (
     <NextSeo
-      title={title}
+      title={title + " | Furkan Bayram"}
       description={description}
       canonical={canonicalURL}
       openGraph={{

@@ -19,13 +19,13 @@ const Layout = ({ children, title, description }: Props) => {
             <Logo />
             FurkanBayram
           </div>
-          <div className="relative z-20 -mt-2 bg-primary-dark text-white shadow-2xl min-h-[650px] grid grid-cols-[50px_1fr_50px]">
+          <div className="relative z-20 -mt-2 bg-primary-dark text-white shadow-2xl min-h-[650px] grid grid-cols-[25px_1fr_25px] md:grid-cols-[50px_1fr_50px]">
             <div className="border-r border-gray-600 flex flex-col justify-between">
               <span className="border-t border-b border-gray-600 w-full h-10 box-content block mt-12"></span>
               <span className="bg-gray-600 w-full h-px block mt-auto mb-16"></span>
             </div>
-            <div className="border-t border-gray-600 mt-12 flex flex-col justify-between">
-              <div className="border-b border-gray-600">
+            <div className="border-t border-gray-600 mt-12 flex flex-col justify-between overflow-hidden">
+              <div className="border-b border-gray-600 overflow-x-auto">
                 <Navbar />
               </div>
               {children}

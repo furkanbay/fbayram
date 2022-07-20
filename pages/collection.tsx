@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { useState } from "react";
 import Layout from "@components/Layout";
 import ExternalLink from "@components/SVG/ExternalLink";
-import getAirtableColletion from "@utils/airtable-collection";
+import { getAirtable } from "@utils/airtable";
 
 type Props = {
   data: Array<{
@@ -34,13 +34,13 @@ const Collection: NextPage<Props> = ({ data, categories }) => {
                 selectedCategory === i
                   ? "text-gray-200"
                   : "text-gray-500 hover:text-gray-300"
-              } px-4 py-2 rounded-md cursor-pointer`}
+              } rounded-md cursor-pointer`}
             >
               {i}
             </div>
           ))}
         </div>
-        <ul className="mt-4 list-disc ml-8">
+        <ul className="mt-4">
           {data
             .filter(
               (d) =>
@@ -67,7 +67,7 @@ const Collection: NextPage<Props> = ({ data, categories }) => {
 };
 
 export async function getStaticProps() {
-  const data = await getAirtableColletion();
+  const data = await getAirtable("Collection");
   let categories: any[] = ["All"];
   const minifiedData = data.map((item) => {
     categories.push(item.fields.Category);

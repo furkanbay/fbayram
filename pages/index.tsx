@@ -6,8 +6,8 @@ import Layout from "@components/Layout";
 const Home: NextPage = () => {
   return (
     <Layout title="Home">
-      <div className="grid grid-cols-2 items-center gap-12 py-12">
-        <div className="">
+      <div className="grid md:grid-cols-2 items-center gap-12 py-12">
+        <div className="order-2 md:order-1">
           <h1 className="text-2xl">Hey 👋</h1>
           <p className="text-gray-500 mt-4 indent-8">
             I&apos;m a designer and developer from Turkey. I love being in the
@@ -19,13 +19,15 @@ const Home: NextPage = () => {
             an idea, there&apos;s nothing holding you back from building it.
           </p>
         </div>
-        <Image
-          width={289}
-          height={292}
-          src="/assets/furkan-bayram.png"
-          alt="furkan bayram"
-          layout="responsive"
-        />
+        <div className="order-1 md:order-2">
+          <Image
+            width={289}
+            height={292}
+            src="/assets/furkan-bayram.png"
+            alt="furkan bayram"
+            layout="responsive"
+          />
+        </div>
       </div>
     </Layout>
   );

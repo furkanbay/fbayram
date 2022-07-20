@@ -6,30 +6,26 @@ import ExternalLink from "@components/SVG/ExternalLink";
 type Props = {
   data: Array<any>;
 };
-
-const Project: NextPage<Props> = ({ data }) => {
+const Article: NextPage<Props> = ({ data }) => {
   return (
-    <Layout title="Project">
+    <Layout title="Article">
       <div className="mb-auto my-4">
-        <p className="italic text-gray-500">
-          Projects that I have worked on.
-        </p>
+        <p className="italic text-gray-500">Articles that I have written.</p>
         <div className="space-y-4 mt-4">
           {data.map((i) => (
             <div key={i.id} className="">
               <div className="flex gap-2 items-center">
-                <h3 className="text-medium">{i.fields.Name}</h3>
                 <a
                   href={i.fields.Url}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex text-gray-500 gap-1 transition-all hover:gap-2 items-center hover:text-gray-200"
+                  className="flex text-gray-100 gap-2 transition-all hover:gap-4 items-center hover:text-gray-50"
                 >
-                  {i.fields.Url}
+                  {i.fields.Name}
                   <ExternalLink />
                 </a>
               </div>
-              <p className="text-gray-500">{i.fields.Description}</p>
+              <p className="text-gray-500">{i.fields.Recap}</p>
             </div>
           ))}
         </div>
@@ -39,7 +35,7 @@ const Project: NextPage<Props> = ({ data }) => {
 };
 
 export async function getStaticProps() {
-  const data = await getAirtable("Project");
+  const data = await getAirtable("Article");
   const minifiedData = data.map((item) => {
     return {
       id: item.id,
@@ -52,4 +48,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Project;
+export default Article;

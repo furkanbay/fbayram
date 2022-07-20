@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { Home, About, Writing, Project, Collection } from "./SVG/Navbar";
+import { Home, About, Article, Project, Collection } from "./SVG/Navbar";
 
 const Navbar = () => {
   const router = useRouter();
@@ -21,9 +21,9 @@ const Navbar = () => {
     },
     {
       id: 2,
-      name: "Writing",
-      url: "/writing",
-      icon: <Writing />,
+      name: "Article",
+      url: "/article",
+      icon: <Article />,
     },
     {
       id: 3,

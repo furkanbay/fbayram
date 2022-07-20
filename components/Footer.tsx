@@ -46,14 +46,14 @@ const Footer = () => {
     },
   ];
   return (
-    <div className="flex justify-center gap-2">
+    <div className="flex flex-col md:flex-row justify-center gap-2 ">
       {links.map((link) => (
         <a
           href={link.url}
           target={link.url === "#" ? "_self" : "_blank"}
           onClick={() => link.url === "#" && alert("Not available")}
           key={link.id}
-          className="flex flex-col items-center text-gray-500 hover:text-gray-200 py-2 px-4 bg-primary-dark transition-all duration-300 transform -translate-y-1/2 hover:translate-y-0"
+          className="flex flex-col items-center text-gray-500 hover:text-gray-200 py-2 px-4 bg-primary-dark transition-all duration-300 transform md:-translate-y-1/2 md:hover:translate-y-0"
           rel="noreferrer"
         >
           {link.icon}

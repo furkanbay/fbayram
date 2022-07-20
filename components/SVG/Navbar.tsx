@@ -22,7 +22,7 @@ const About = () => (
   </svg>
 );
 
-const Writing = () => (
+const Article = () => (
   <svg
     width="20"
     height="20"
@@ -58,4 +58,4 @@ const Collection = () => (
   </svg>
 );
 
-export { Home, About, Writing, Project, Collection };
+export { Home, About, Article, Project, Collection };

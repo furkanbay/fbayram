@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import { useState } from "react";
 import Layout from "@components/Layout";
 import ExternalLink from "@components/SVG/ExternalLink";
+import getAirtableColletion from "@utils/airtable-collection";
 
 type Props = {
   data: Array<{
@@ -30,7 +31,9 @@ const Collection: NextPage<Props> = ({ data, categories }) => {
               key={index}
               onClick={() => setSelectedCategory(i)}
               className={`${
-                selectedCategory === i ? "text-gray-200" : "text-gray-500 hover:text-gray-300"
+                selectedCategory === i
+                  ? "text-gray-200"
+                  : "text-gray-500 hover:text-gray-300"
               } px-4 py-2 rounded-md cursor-pointer`}
             >
               {i}
@@ -64,25 +67,15 @@ const Collection: NextPage<Props> = ({ data, categories }) => {
 };
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.API_URL}/api/airtable-collection`);
-  const data = await res.json();
+  const data = await getAirtableColletion();
   let categories: any[] = ["All"];
-  const minifiedData = data.records.map(
-    (item: {
-      fields: {
-        Name: string;
-        Url: string;
-        Category: string;
-      };
-      id: any;
-    }) => {
-      categories.push(item.fields.Category);
-      return {
-        id: item.id,
-        fields: item.fields,
-      };
-    }
-  );
+  const minifiedData = data.map((item) => {
+    categories.push(item.fields.Category);
+    return {
+      id: item.id,
+      fields: item.fields,
+    };
+  });
   return {
     props: { data: minifiedData, categories },
     revalidate: 10,

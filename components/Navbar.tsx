@@ -44,7 +44,7 @@ const Navbar = () => {
       {menu.map((item) => (
         <Link href={item.url} key={item.id}>
           <a
-            className={`flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-md  ${
+            className={`flex items-center gap-2 px-4 py-2 bg-[#333] rounded-md  ${
               item.url === pathname
                 ? "text-white bg-gray-700"
                 : "text-gray-400 hover:text-gray-100"

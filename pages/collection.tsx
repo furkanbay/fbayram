@@ -25,7 +25,7 @@ const Collection: NextPage<Props> = ({ data, categories }) => {
         <p className="italic">
           Things I like while surfing the web and I think you will like it too.
         </p>
-        <div className="flex gap-4 mt-4">
+        <div className="flex -mx-2 mt-4">
           {categories.map((i, index) => (
             <div
               key={index}
@@ -34,7 +34,7 @@ const Collection: NextPage<Props> = ({ data, categories }) => {
                 selectedCategory === i
                   ? "text-gray-200"
                   : "text-gray-500 hover:text-gray-300"
-              } rounded-md cursor-pointer`}
+              } rounded-md cursor-pointer p-2`}
             >
               {i}
             </div>
@@ -70,7 +70,9 @@ export async function getStaticProps() {
   const data = await getAirtable("Collection");
   let categories: any[] = ["All"];
   const minifiedData = data.map((item) => {
-    categories.push(item.fields.Category);
+    if (!categories.includes(item.fields.Category)) {
+      categories.push(item.fields.Category);
+    }
     return {
       id: item.id,
       fields: item.fields,

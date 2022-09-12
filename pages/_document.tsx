@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import { GTM_ID } from "@utils/gtm";
 
 export default function Document() {
   return (
@@ -16,6 +17,14 @@ export default function Document() {
         />
       </Head>
       <body>
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            className="hidden invisible"
+          />
+        </noscript>
         <Main />
         <NextScript />
       </body>

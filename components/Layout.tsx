@@ -32,7 +32,7 @@ const Layout = ({ children, title, description }: Props) => {
               <div className="border-t border-gray-600 h-16 box-content flex justify-between">
                 <div className="border-r border-gray-600 flex flex-col justify-center px-2">
                   <span className="uppercase text-[10px] mb-1 text-gray-500">Not Available For</span>
-                  <p className="flex items-center gap-2 bg-gray-800 rounded-xl px-4 py-px text-[14px] text-green-500">
+                  <p className="flex items-center gap-2 bg-gray-800 rounded-xl px-4 py-px text-[14px] text-red-500">
                     <span className="bg-red-500 w-3 h-3 block rounded-full"></span>
                     Freelance
                   </p>

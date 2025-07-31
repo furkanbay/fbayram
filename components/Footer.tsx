@@ -16,7 +16,7 @@ const Footer = () => {
     {
       id: 1,
       name: "Instagram",
-      url: "#",
+      url: "https://www.instagram.com/__furkanbay",
       icon: <Instagram />,
     },
     {

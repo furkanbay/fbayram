@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import { useState } from "react";
 import Layout from "@components/Layout";
 import ExternalLink from "@components/SVG/ExternalLink";
-import { getAirtable } from "@utils/airtable";
 
 type Props = {
   data: Array<{
@@ -16,8 +15,8 @@ type Props = {
   categories: Array<string>;
 };
 
-const Collection: NextPage<Props> = ({ data, categories }) => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+const Collection: NextPage<Props> = () => {
+  const data: any[] = [];
 
   return (
     <Layout title="Collection">
@@ -25,28 +24,10 @@ const Collection: NextPage<Props> = ({ data, categories }) => {
         <p className="italic">
           Things I like while surfing the web and I think you will like it too.
         </p>
-        <div className="flex -mx-2 mt-4">
-          {categories.map((i, index) => (
-            <div
-              key={index}
-              onClick={() => setSelectedCategory(i)}
-              className={`${
-                selectedCategory === i
-                  ? "text-gray-200"
-                  : "text-gray-500 hover:text-gray-300"
-              } rounded-md cursor-pointer p-2`}
-            >
-              {i}
-            </div>
-          ))}
-        </div>
+       
         <ul className="mt-4">
-          {data
-            .filter(
-              (d) =>
-                selectedCategory === "All" ||
-                d.fields.Category === selectedCategory
-            )
+          {data.length > 0 ? data
+            .filter(d => d.fields.Category === "All")
             .map((i) => (
               <li key={i.id}>
                 <a
@@ -59,29 +40,11 @@ const Collection: NextPage<Props> = ({ data, categories }) => {
                   <ExternalLink />
                 </a>
               </li>
-            ))}
+            )) : <div className="text-gray-500">No data found</div>}
         </ul>
       </div>
     </Layout>
   );
 };
-
-export async function getStaticProps() {
-  const data = await getAirtable("Collection");
-  let categories: any[] = ["All"];
-  const minifiedData = data.map((item) => {
-    if (!categories.includes(item.fields.Category)) {
-      categories.push(item.fields.Category);
-    }
-    return {
-      id: item.id,
-      fields: item.fields,
-    };
-  });
-  return {
-    props: { data: minifiedData, categories },
-    revalidate: 10,
-  };
-}
 
 export default Collection;

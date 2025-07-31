@@ -4,7 +4,6 @@ import {
   Behance,
   Linkedin,
   Github,
-  Resume,
 } from "./SVG/Social";
 const Footer = () => {
   const links = [
@@ -37,12 +36,6 @@ const Footer = () => {
       name: "Github",
       url: "https://github.com/furkanbay",
       icon: <Github />,
-    },
-    {
-      id: 5,
-      name: "Resume",
-      url: "/Furkan_Bayram_Resume.pdf",
-      icon: <Resume />,
     },
   ];
   return (
